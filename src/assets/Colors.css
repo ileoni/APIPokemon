@@ -1,0 +1,35 @@
+:root {
+    --hex-green: #57c754;
+    --hex-red: #f27a41;
+    --hex-blue: #0fadd4;
+    --hex-yellow: #e0e016;
+    --hex-white: #77ccd1;
+    --hex-purple: #a77ecf;
+    --hex-brown: #dba560;
+    --hex-pink: #e37197;
+    --hex-gray: #829299;
+    --hex-black: #0d3140;
+}
+
+.green {background: var(--hex-green);}
+.red {background: var(--hex-red);}
+.blue {background: var(--hex-blue);}
+.yellow {background: var(--hex-yellow);}
+.white {background: var(--hex-white);}
+.purple {background: var(--hex-purple);}
+.brown {background: var(--hex-brown);}
+.pink {background: var(--hex-pink);}
+.gray {background: var(--hex-gray);}
+.black {background: var(--hex-black);}
+
+.color-green {color: var(--hex-green);}
+.color-red {color: var(--hex-red);}
+.color-blue {color: var(--hex-blue);}
+.color-yellow {color: var(--hex-yellow);}
+.color-white {color: var(--hex-white);}
+.color-purple {color: var(--hex-purple);}
+.color-brown {color: var(--hex-brown);}
+.color-pink {color: var(--hex-pink);}
+.color-gray {color: var(--hex-gray);}
+.color-black {color: var(--hex-black);}
+

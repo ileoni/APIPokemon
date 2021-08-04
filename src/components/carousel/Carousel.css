@@ -1,0 +1,66 @@
+.carousel-container
+{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+}
+.carousel-container button
+{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+}
+.carousel
+{
+    display: flex;
+    width: 100%;
+}
+.slide
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+.slide img
+{
+    height: auto;
+    width: 100%;
+}
+:is(
+    .slide:first-child,
+    .slide:last-child
+    )
+{
+    opacity: .7;
+
+    height: auto;
+    width: 50%;
+}
+:is(
+    .slide:first-child,
+    .slide:last-child
+    ) span
+{
+    display: none;
+}
+.zoom
+{
+    animation: left 600ms forwards;
+}
+@keyframes left {
+    0%{
+        transform: scaleY(50%) scaleX(50%);
+        color: transparent;
+    }
+    99%{
+        transform: scaleY(100%) scaleX(100%);
+        color: transparent;
+    }
+    100%{
+        color: white;
+    }    
+}

@@ -1,0 +1,105 @@
+@import "../../../assets/Colors.css";
+
+.pokemon-container
+{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "c1 c1 c1 c1"
+    "c2 c2 c2 c2"
+    "c3 c3 c3 c3"
+    "c4 c5 c5 c5"
+    "c6 c6 c6 c6"
+    "c7 c7 c7 c7";
+    
+    color: white;
+
+    font-weight: 100;
+    font-family: 'Fjalla One', sans-serif;
+}
+:is(.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7) img
+{
+    width: 100%;
+}
+:is(.c-1, .c-2, .c-3, .c-4, .c-5, .c-6, .c-7)
+{
+    padding: 10px;
+    font-weight: 100;
+}
+.c-1 {grid-area: c1; opacity: 95%;}
+.c-2 {grid-area: c2; opacity: 90%;}
+.c-3 {grid-area: c3; opacity: 85%;}
+.c-4 {grid-area: c4; opacity: 80%;}
+.c-5 {grid-area: c5; opacity: 75%;}
+.c-6 {grid-area: c6; opacity: 70%;}
+.c-7 {grid-area: c7; opacity: 100%;}
+.c-1
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.c-1 .number
+{
+    align-self: flex-start;
+}
+.c-1 .name
+{
+    font-size: 1.8rem;
+}
+.c-2
+{
+    padding: 0 3rem;
+}
+.c-4
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.c-4 div
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.c-4 img
+{
+    width: 2.5rem;
+}
+.c-4 .type
+{
+    font-size: 0.9em;
+}
+.c-5
+{
+    display: grid;
+}
+.c-5 div
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    color: #111;
+}
+.c-5 div:nth-child(even)
+{
+    color: #FFF;
+}
+
+
+@media (min-width: 768px) {
+    .pokemon-container
+    {
+        display: grid;
+        grid-template-areas:
+        "c1 c1 c1 c1"
+        "c2 c2 c3 c3"
+        "c2 c2 c5 c4"
+        "c2 c2 c6 c6"
+        "c7 c7 c6 c6"
+        ;
+        margin: 0 5rem;
+    }
+}
