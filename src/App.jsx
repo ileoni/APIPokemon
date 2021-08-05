@@ -10,7 +10,7 @@ class App extends React.Component
     return (
       <>
       <div className="app">
-        <Main/>
+        <h1>Teste</h1>
       </div>
       </>
     )
