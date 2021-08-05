@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import Main from './template/Main'
 
 class App extends React.Component
 { 
@@ -10,7 +9,8 @@ class App extends React.Component
     return (
       <>
       <div className="app">
-        <h1>Teste</h1>
+        <h1>ola</h1>
+
       </div>
       </>
     )
