@@ -6,12 +6,32 @@ const config = {
     method: "GET",
 }
 
+const innitialState = {
+    error: null,
+    data: null,
+    loading: false    
+}
+
 const api = {
     state: {
+        ...innitialState,
         limit: 0,
-        error: null,
-        data: null,
-        loading: false
+    },
+    load: async ({isDebounced, params}) => {
+        const debounced = DebouncedPromise(axios, 1000)
+        const finalConfig = {
+            ...config,
+            url: "pokemon",
+            params
+        }
+
+        const fn = isDebounced ? debounced: axios
+        const {data} = await fn(finalConfig)
+
+        return {
+            data,
+            loading: true
+        }
     },
     allPokemons: async (isDebounced) => {
         const debounced = DebouncedPromise(axios, 300);
@@ -20,7 +40,7 @@ const api = {
             ...config,
             url: "pokemon",
             params: {
-                limit: 151
+                limit: 21
             },
         };
 

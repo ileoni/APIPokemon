@@ -1,10 +1,10 @@
 import './List.css'
 import React from 'react'
-import {Link} from 'react-router-dom'
-import api from '../../../api/APIUtils'
-import Card from './Card'
-import Loading from '../../loading/Loading' 
 import InfiniteScroll from '../../UI/InfiniteScroll'
+import api from '../../../api/APIUtils'
+import { Link } from 'react-router-dom'
+import Card from './Card'
+import Loading from '../../loading/Loading'
 
 const urlBaseImage = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/";
 
@@ -15,32 +15,56 @@ class List extends React.Component
         super(props)
         this.state = {
             pokemons: [],
-            range: 20,
-            loading: false
+            range: 11
         }
         this.fetchMore = this.fetchMore.bind(this)
     }
 
-    async componentDidMount ()
+    async componentDidMount()
     {
         await this.allPokemons()
     }
 
     async allPokemons()
     {
-        const {data: {results}} = await api.allPokemons(false)
+        const {data: {results}, loading} = await api.load({
+            isDebounced: true,
+            params: {
+                limit: this.state.range,
+            }
+        })
+
+        const pokemons = await this.getSpecies(results)
+        this.setState({
+            pokemons: pokemons,
+            loading
+        })
+    }
+
+    async fetchMore()
+    {
+        let {range} = this.state
+        
+        range += 20
+        
+        let {data: {results}} = await api.load({
+            isDebounced: false,
+            params: {
+                limit: range
+            }
+        })
         const pokemons = await this.getSpecies(results)
 
         this.setState({
             pokemons: pokemons,
-            loading: true
+            range
         })
     }
 
     getSpecies(pokemons)
     {
         let arr = []
-        return new Promise( async resolve => {
+        return new Promise(async resolve => {
             for (let {name: namePokemon} of pokemons) {
                 const {data: {id, name, color}} = await api.findPokemonSpecie(namePokemon, false)
              
@@ -56,44 +80,40 @@ class List extends React.Component
         })
     }
 
-    async fetchMore()
-    {
-        let newRange = (this.state.range + 10)
-
-        this.setState({
-            range: newRange
-        })
-    }
-
     render ()
     {
-        const {pokemons, range, loading} = this.state
-
+        const {pokemons, loading, range} = this.state
+        
         return (
             <>
                 {
                     !loading && (
-                        <Loading/>
+                        <Loading />
                     )
                 }
                 <div className="container-list">
                     {
                         loading && (
-                            <>
-                                {
-                                    pokemons.slice(0, range).map(({id, name, color, sprite}, key) => {
-                                        return (
-                                            <Link key={key} to={`pokemon/${name}`}>
-                                                <Card id={id} color={color} sprite={sprite}/>
-                                            </Link>
-                                        )
-                                    })
-                                }
-                                <InfiniteScroll fetchMore={this.fetchMore}/>
-                            </>
+                            pokemons.map(({id, name, color, sprite}, key) => {
+                                return (
+                                    <div key={key}>
+                                        <Link key={key} to={`pokemon/${name}`}>
+                                            <Card id={id} color={color} sprite={sprite}/>
+                                        </Link>
+                                    </div>
+                                )
+                            })
                         )
                     }
-                </div>    
+                </div>
+                {
+                    loading &&
+                    range < 151 && (
+                        <div>
+                            <InfiniteScroll fetchMore={this.fetchMore}/>
+                        </div>
+                    )
+                }
             </>
         )
     }
