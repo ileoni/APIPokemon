@@ -28,7 +28,7 @@ class Page extends React.Component
     async componentDidMount()
     {
         const {params} = this.props.match
-        const {data, loading} = await api.findPokemonSpecie(params.id)
+        const {data, loading} = await api.findPokemonSpecie(params.id, true)
         
         const {
             id, color, name, flavor_text_entries, evolution_chain, varieties, genera

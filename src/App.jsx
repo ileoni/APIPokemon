@@ -1,5 +1,5 @@
-import React from 'react';
 import './App.css';
+import React from 'react';
 
 import Main from './main/template/Main'
 
@@ -10,7 +10,6 @@ class App extends React.Component
     return (
       <>
       <div className="app">
-        <h1>ola</h1>
         <Main/>
       </div>
       </>

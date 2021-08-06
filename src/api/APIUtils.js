@@ -13,8 +13,8 @@ const api = {
         data: null,
         loading: false
     },
-    allPokemons: async (more) => {
-        const debounced = DebouncedPromise(axios, 600);
+    allPokemons: async (isDebounced) => {
+        const debounced = DebouncedPromise(axios, 300);
         const {state} = api
         const finalConfig = {
             ...config,
@@ -24,7 +24,9 @@ const api = {
             },
         };
 
-        const {data} = await debounced(finalConfig);
+        const fn = isDebounced ? debounced: axios
+
+        const {data} = await fn(finalConfig);
 
         return {
             ...state,
@@ -32,15 +34,35 @@ const api = {
             loading: true
         }
     },
-    findPokemonSpecie: async (id) => {
-        const debounced = DebouncedPromise(axios, 1000)
+    findPokemon: async (id, isDebounced) => {
+        const debounced = DebouncedPromise(axios, 300);
+        const {state} = api
+        const finalConfig = {
+            ...config,
+            url: `pokemon/${id}`
+        };
+
+        const fn = isDebounced ? debounced: axios
+
+        const {data} = await fn(finalConfig);
+
+        return {
+            ...state,
+            data: data,
+            loading: true
+        }
+    },
+    findPokemonSpecie: async (id, isDebounced = true) => {
+        const debounced = DebouncedPromise(axios, 300)
         const {state} = api
         const finalConfig = {
             ...config,
             url: `pokemon-species/${id}`
         }
 
-        const {data} = await debounced(finalConfig)
+        const fn = isDebounced ? debounced: axios;
+
+        const {data} = await fn(finalConfig)
 
         return {
             ...state,

@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-    BrowserRouter
+    HashRouter as Router
 } from 'react-router-dom'
 import Routes from '../../route/Routes'
 
@@ -9,9 +9,9 @@ class Main extends React.Component
     render()
     {
         return (
-            <BrowserRouter>
+            <Router>
                 <Routes/>
-            </BrowserRouter>
+            </Router>
         )
     }
 }
