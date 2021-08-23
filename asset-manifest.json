@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/APIPokemon/static/css/main.365162b8.chunk.css",
+    "main.css": "/APIPokemon/static/css/main.39d15886.chunk.css",
     "main.js": "/APIPokemon/static/js/main.dc3b0caa.chunk.js",
     "main.js.map": "/APIPokemon/static/js/main.dc3b0caa.chunk.js.map",
     "runtime-main.js": "/APIPokemon/static/js/runtime-main.aca15cd2.js",
@@ -12,7 +12,7 @@
     "static/js/3.a08a2756.chunk.js.map": "/APIPokemon/static/js/3.a08a2756.chunk.js.map",
     "index.html": "/APIPokemon/index.html",
     "static/css/2.95ff951f.chunk.css.map": "/APIPokemon/static/css/2.95ff951f.chunk.css.map",
-    "static/css/main.365162b8.chunk.css.map": "/APIPokemon/static/css/main.365162b8.chunk.css.map",
+    "static/css/main.39d15886.chunk.css.map": "/APIPokemon/static/css/main.39d15886.chunk.css.map",
     "static/js/2.6e6ce55c.chunk.js.LICENSE.txt": "/APIPokemon/static/js/2.6e6ce55c.chunk.js.LICENSE.txt",
     "static/media/ghost.c138083b.png": "/APIPokemon/static/media/ghost.c138083b.png",
     "static/media/ice.5620aac2.png": "/APIPokemon/static/media/ice.5620aac2.png",
@@ -23,7 +23,7 @@
     "static/js/runtime-main.aca15cd2.js",
     "static/css/2.95ff951f.chunk.css",
     "static/js/2.6e6ce55c.chunk.js",
-    "static/css/main.365162b8.chunk.css",
+    "static/css/main.39d15886.chunk.css",
     "static/js/main.dc3b0caa.chunk.js"
   ]
 }
