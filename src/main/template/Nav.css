@@ -1,0 +1,46 @@
+.navbars
+{
+    background-color: var(--hex-blue);
+}
+@media (min-width: 320px) and (max-width: 768px) {
+    .side-nav
+    {
+        position: fixed;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    .navbars
+    {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .navbars i
+    {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    .side-nav
+    {
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 5rem;
+    }
+    .navbars
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+    }
+    .navbars span
+    {
+        display: none;
+    }
+}

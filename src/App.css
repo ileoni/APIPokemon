@@ -1,8 +1,41 @@
-.app
-{
-    display: flex;
-    flex-direction: column;
-    
-    height: auto;
-    width: 100%;
+@media (min-width: 320px) and (max-width: 768px) {
+    .app
+    {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 10rem;
+        grid-template-areas: "content" "menu";
+        height: 100vh;
+        width: 100vw;
+    }
+    aside.side-nav
+    {
+        grid-area: menu;
+    }
+    main.content
+    {
+        grid-area: content;
+    }
+}
+
+@media (min-width: 768px) {
+    .app
+    {
+        display: grid;
+        grid-template-columns: 5rem 1fr;
+        grid-template-areas: "menu content";
+        height: 100%;
+    }
+    aside.side-nav
+    {
+        grid-area: menu;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+    main.content
+    {
+        grid-area: content;
+    }
 }

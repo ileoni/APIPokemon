@@ -11,16 +11,16 @@
     --hex-black: #0d3140;
 }
 
-.green {background: var(--hex-green);}
-.red {background: var(--hex-red);}
-.blue {background: var(--hex-blue);}
-.yellow {background: var(--hex-yellow);}
-.white {background: var(--hex-white);}
-.purple {background: var(--hex-purple);}
-.brown {background: var(--hex-brown);}
-.pink {background: var(--hex-pink);}
-.gray {background: var(--hex-gray);}
-.black {background: var(--hex-black);}
+.pokemon-green {background: var(--hex-green);}
+.pokemon-red {background: var(--hex-red);}
+.pokemon-blue {background: var(--hex-blue);}
+.pokemon-yellow {background: var(--hex-yellow);}
+.pokemon-white {background: var(--hex-white);}
+.pokemon-purple {background: var(--hex-purple);}
+.pokemon-brown {background: var(--hex-brown);}
+.pokemon-pink {background: var(--hex-pink);}
+.pokemon-gray {background: var(--hex-gray);}
+.pokemon-black {background: var(--hex-black);}
 
 .color-green {color: var(--hex-green);}
 .color-red {color: var(--hex-red);}

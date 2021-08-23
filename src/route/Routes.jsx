@@ -5,8 +5,8 @@ import {
     Route,
 } from 'react-router-dom'
 
-import List from '../components/pokemon/list/List'
-import Page from '../components/pokemon/page/Page'
+import Home from '../components/Home'
+import Page from '../components/Page'
 
 class Routes extends React.Component
 {
@@ -18,7 +18,7 @@ class Routes extends React.Component
                     <Route
                         exact
                         path="/"
-                        component={List}
+                        component={Home}
                     />
                     <Route
                         exact

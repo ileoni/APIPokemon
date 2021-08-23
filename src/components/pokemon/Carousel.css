@@ -1,0 +1,14 @@
+.carousel-item
+{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.carousel-item .name
+{
+    position: absolute;
+    
+    font-size: 24pt;
+    font-style: italic;
+    text-transform: capitalize;
+}

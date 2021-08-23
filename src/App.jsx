@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 
 import Main from './main/template/Main'
+import Nav from './main/template/Nav'
 
 class App extends React.Component
 { 
@@ -10,7 +11,12 @@ class App extends React.Component
     return (
       <>
       <div className="app">
-        <Main/>
+        <aside className="side-nav">
+          <Nav/>
+        </aside>
+        <main className="content">
+          <Main/>
+        </main>
       </div>
       </>
     )

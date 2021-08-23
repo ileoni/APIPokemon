@@ -1,0 +1,116 @@
+@media (min-width: 320px) and (max-width: 768px) {
+    .pokemon-bg
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100vh;
+        width: 100vw;
+    }
+    .container-title
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .container-title .title
+    {
+        font-size: 48pt;
+    }
+    .container-title .subtitle
+    {
+        font-size: 16pt;
+    }
+    .pokemon-list
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #BBCA;
+        
+        height: 100vh;
+    }
+    .pokemon-list .title
+    {
+        color: #FFF;
+        font-size: 24pt;
+    }
+    .list
+    {
+        height: 50vh;
+        width: 70vw;
+        overflow-y: scroll;
+    }
+    .pokemon-favorite
+    {
+        height: 100vh;
+    }
+}
+@media (min-width: 768px) {
+    .pokemon-bg
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        height: 100vh;
+        width: 100%;
+    }
+    .container-title
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+    }
+    .container-title .title
+    {
+        font-size: 72pt;
+    }
+    .container-title .subtitle
+    {
+        font-size: 20pt;
+    }
+    .pokemon-list
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background-color: #BBCA;
+ 
+        height: 100vh;
+        width: 100%;
+    }
+    .pokemon-list .title
+    {
+        color: white;
+        font-size: 48pt;
+    }
+    .list
+    {
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        height: 25rem;
+        width: 50%;
+    }
+    .list::-webkit-scrollbar
+    {
+        background-color: transparent;
+        width: 5px;
+    }
+    .list::-webkit-scrollbar-thumb
+    {
+        background-color: #FFF;
+        border-radius: 6px;
+    }
+    .pokemon-favorite
+    {
+        height: 100vh;
+        width: 100%;
+    }
+}

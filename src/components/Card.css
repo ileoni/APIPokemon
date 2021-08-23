@@ -1,0 +1,33 @@
+@import '../assets/Colors.css';
+
+.container-card-2
+{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    border-radius: 5%;
+}
+.container-card-2
+.number
+{
+    position: absolute;
+    align-self: flex-start;
+    
+    padding: 10px;
+
+    color: white;
+}
+.container-card-2 img
+{
+    width: 100%;
+    padding: 15px;
+}
+
+@media (min-width: 1024px) {
+    .container-card-2 {
+        height: 6.5rem;
+    }
+}
